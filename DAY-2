@@ -1,0 +1,17 @@
+//Greek for greeks POTD --- Power Of Numbers
+//User function Template for Java
+class Solution
+{
+    static int m = 1000000007;
+    long power(int N,int R)
+    {
+        //Your code here
+        if(R==0) return 1;
+        if(N==1) return 1;
+        long ans = power(N, R/2) % m;
+        if((R & 1)== 1) return ((ans*ans)%m *N) %m;
+        return (ans*ans)%m;
+        
+    }
+
+}
