@@ -1,0 +1,27 @@
+//Greek for Greeks  POTD ---- Delete middle element of a stack
+
+//User function Template for Java
+
+class Solution
+{
+    //Function to delete middle element of a stack.
+    public void deleteMid(Stack<Integer>s,int n){
+        // code here
+        
+        int x = n/2;
+        Stack<Integer> stack = new Stack<>();
+        while(x-->0){
+            int top = s.peek();
+            stack.push(top);
+            s. pop();
+        }
+        s. pop();
+        x = n/2;
+        while(x-->0){
+            int top = stack.peek();
+            s.push(top);
+            stack.pop();
+        }
+        
+    } 
+}
