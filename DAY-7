@@ -1,0 +1,42 @@
+//Greek for greeks POTD --- Quick Sort
+//User function Template for C
+
+//Function to sort an array using quick sort algorithm.
+void quickSort(int arr[], int low, int high)
+{
+    // code here
+    int m;
+    if(low<high){
+        m = partition (arr,low,high);
+        quickSort(arr,low,m-1);
+        quickSort(arr,m+1,high);
+        
+    }
+}
+    
+int partition (int arr[], int low, int high)
+{
+   // Your code here
+   int i,j,pivot,t1,t2;
+   i = low;
+   j = high;
+   pivot = low;
+   while(i<j){
+       while(arr[i]<=arr[pivot]){
+           i++;
+       }
+       while(arr[j]>arr[pivot]){
+           j--;
+       }
+       if(i<j){
+           t1 = arr[i];
+           arr[i] = arr[j];
+           arr[j] = t1;
+       }
+   }
+   t2 = arr[j];
+   arr[j] = arr[pivot];
+   arr[pivot] = t2;
+   
+   return j;
+}
